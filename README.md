@@ -26,22 +26,39 @@ You may use any prompting techniques, including but not limited to few-shot, sel
 ## How to use this repository
 
 1. Clone this repository.
+```bash
+git clone git@github.com:NeuralgoLyzr/hackathon-23Oct.git
+cd hackathon-23Oct
+```
+OR
+```bash
+git clone https://github.com/NeuralgoLyzr/hackathon-23Oct.git
+cd hackathon-23Oct
+```
 2. Install the required libraries using `pip install -r requirements.txt`.
+3. Create a .env file and add your OpenAI API key.
+```bash
+echo "OPENAI_API_KEY=your-api-key" > .env
+```
+4. Add your prompts to the `prompt_texts.py` file.
+5. Run the code in the `example.py` script to ask questions and view the results.
+6. You can also modify the `main.py` and `utils.py` scripts to add more functionality as needed.
+7. Submit your final code as a zip file containing all the necessary files.
 
-### Repository Structure
+## Repository Structure
 
 The repository contains the following files:
 
-#### `README.md`
+### `README.md`
 This is the file you are currently reading.
 
-#### `requirements.txt`
+### `requirements.txt`
 This file contains the list of required libraries. You can install them using the following command:
 ```bash
 pip install -r requirements.txt
 ```
 
-#### `world-data-2023.csv`
+### `world-data-2023.csv`
 This is the dataset you will use for the hackathon. It contains information about various countries. This dataset has been cleaned and preprocessed, but contains missing values. You may preprocess the data further as needed.
 The following columns are present in the dataset:
 - `country`: The name of the country.
@@ -81,7 +98,7 @@ The following columns are present in the dataset:
 - `longitude`: The longitude of the country.
 
 
-#### `main.py`
+### `main.py`
 This is the main script that contains the `DataAnalysis` class.
 This class contains methods to load the dataset and ask questions.
 - `__init__(self, filepath: str, **kwargs)` : The constructor method that initializes the `DataAnalysis` class.
@@ -99,15 +116,15 @@ It takes the user input, uses the LLM to summarize the analysis results, and ret
 - `ask(self, user_input: str)` : The method assists the user in asking questions.
 It coordinates the analysis, plotting, and insights methods.
 
-#### `prompt_texts.py`
+### `prompt_texts.py`
 The script where you should add your prompts.
 The dictionary `PROMPTS` is imported into `main.py` and used when calling the LLM.
 
-#### `utils.py`
+### `utils.py`
 This script contains utility functions.
 You will find optional functions here, and you can add your own functions as needed.
 
-#### `example.py`
+### `example.py`
 This script contains example code to demonstrate how to use the `DataAnalysis` class.
 Once you have added your prompts, you may run this code to ask questions and view the results.
 
