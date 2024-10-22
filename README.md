@@ -1,5 +1,6 @@
 # Prompt Engineering for Data Analysis 
 Hackathon, 23 October 2024
+Hosted By: Pradipta Ghoshal and Gargi Maheshwari
 
 ## Introduction
 
@@ -59,8 +60,12 @@ pip install -r requirements.txt
 ```
 
 ### `world-data-2023.csv`
-This is the dataset you will use for the hackathon. It contains information about various countries. This dataset has been cleaned and preprocessed, but contains missing values. You may preprocess the data further as needed.
-The following columns are present in the dataset:
+This is the dataset you will use for the hackathon.
+It contains information about various countries.
+This dataset has been cleaned and preprocessed, but contains missing values
+You may preprocess the data further as needed.
+
+The following columns are present in this dataset:
 - `country`: The name of the country.
 - `density_per_km2`: The population density per square kilometer.
 - `abbreviation`: The abbreviation of the country's name.
@@ -100,7 +105,7 @@ The following columns are present in the dataset:
 
 ### `main.py`
 This is the main script that contains the `DataAnalysis` class.
-This class contains methods to load the dataset and ask questions.
+This class contains the following methods to load the dataset and ask questions:
 - `__init__(self, filepath: str, **kwargs)` : The constructor method that initializes the `DataAnalysis` class.
 It takes the filepath of the dataset as input.
 You can add any additional arguments as needed.
@@ -119,6 +124,7 @@ It coordinates the analysis, plotting, and insights methods.
 ### `prompt_texts.py`
 The script where you should add your prompts.
 The dictionary `PROMPTS` is imported into `main.py` and used when calling the LLM.
+The keys of the dictionary are the prompt names, and the values are the prompts themselves.
 
 ### `utils.py`
 This script contains utility functions.
