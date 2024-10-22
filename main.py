@@ -16,26 +16,21 @@ load_dotenv()
 client = openai.OpenAI()
 
 
-class DataAnalyzr:
-    def __init__(self):
+class DataAnalysis:
+    def __init__(self, filepath: str, **kwargs):
         """Create a new instance of the DataAnalyzr class."""
         self.logger = logging.getLogger(__name__)
         logging.basicConfig(level=logging.INFO)
 
+        self.df = pd.read_csv(filepath, **kwargs)
         (
-            self.df,
             self.analysis_code,
             self.analysis_output,
             self.plot,
             self.plot_code,
             self.plot_path,
             self.insights_output,
-        ) = (None,) * 7
-
-    def get_data(self, filepath: str, **kwargs):
-        """Read data from the given file."""
-
-        self.df = pd.read_csv(filepath, **kwargs)
+        ) = (None,) * 6
 
     def analysis(self, user_input: str):
         """Generate analysis output for the given user input."""
@@ -132,7 +127,7 @@ class DataAnalyzr:
         insights_output = completion.choices[0].message.content
         return insights_output
 
-    def ask(self, user_input: str) -> dict[str, str]:
+    def ask(self, user_input: str) -> dict:
         """Ask a question and generate analysis, plot and insights outputs."""
         user_input = user_input.strip()
         assert (
