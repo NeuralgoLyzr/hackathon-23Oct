@@ -1,4 +1,5 @@
 openai
-dotenv
+python-dotenv
+pandas
 aenum
 matplotlib
